@@ -1,0 +1,486 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* End of basic css */
+
+/* navbar  */
+
+/* sidebar */
+.sidebar {
+    width: 8rem;
+    height: 100%;
+    background-color: #eee;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.menu-icons {
+    /* height: 2rem;
+    width: 2rem;
+    background-color: #222; */
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.line {
+    height: 0.2rem;
+    width: 2.5rem;
+    background-color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.line-1,
+.line-3 {
+    width: 1.8rem;
+    transition: all 0.4s;
+}
+
+.menu-icons:hover .line {
+    width: 2.5rem;
+}
+
+
+
+/* social icons */
+.social-icons-list {
+    list-style: none;
+    padding: 0px;
+    height: 22rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-links {
+    font-size: 1.8rem;
+    color: #222;
+    transition: all 0.3s;
+}
+
+.social-links:hover {
+    color: #2c60c7;
+}
+
+/* social icons ends her */
+
+
+.year {
+    color: #222;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+
+/* sidebar ends here */
+
+/* Navigation */
+
+.navigation {
+    position: fixed;
+    left: -22rem;
+    width: 30rem;
+    height: 100%;
+    background: linear-gradient(to top, rgba(34, 32, 32, 1), rgba(34, 32, 32, .8)), url(../img/nav-bg.jpeg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: left 0.5s cubic-bezier(.17, .67, .83, .67);
+}
+
+.checkbox {
+    display: none;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.checkbox:checked~.navigation {
+    left: 8rem;
+}
+
+.checkbox:checked~.sidebar .line-1 {
+    transform: rotate(405deg) translate(3px, 6px);
+    transition: all 0.3s;
+    width: 2.5rem;
+
+}
+
+.checkbox:checked~.sidebar .line-2 {
+    opacity: 0;
+}
+
+.checkbox:checked~.sidebar .line-3 {
+    transform: rotate(-405deg) translate(3px, -6px);
+    transition: all 0.3s;
+    width: 2.5rem;
+
+}
+
+
+
+.nav-heading {
+    color: #deaa88;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 300;
+    letter-spacing: .3rem;
+    text-align: center;
+}
+
+
+.navigation-search {
+    position: relative;
+}
+
+.search-input {
+    width: 22rem;
+    background-color: #222;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    outline: none;
+    border: .1rem solid #deaa88;
+    border-radius: 10rem;
+    letter-spacing: .2rem;
+    color: #deaa88;
+    transition: background-color .3s;
+}
+
+.search-input:focus {
+    background-color: rgb(54, 54, 54);
+}
+
+.search-btn {
+    outline: none;
+    background-color: transparent;
+    border: 0px;
+    color: #deaa88;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+
+}
+
+.search-btn:focus {
+    outline: none;
+}
+
+.navigation-list {
+    list-style: none;
+    padding: 0;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-list-item {
+    position: relative;
+}
+
+.navigation-link {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navigation-link::before {
+    content: '';
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa88;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    transition: width 0.4s cubic-bezier(1, 0, 0, 1);
+}
+
+.navigation-link::after {
+    content: '';
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa88;
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+    transition: width 0.4s cubic-bezier(1, 0, 0, 1);
+}
+
+.navigation-link:hover {
+    color: #deaa88;
+}
+
+.navigation-link:hover::before,
+.navigation-link:hover::after {
+    width: 3rem;
+}
+
+
+.copyright {
+    color: #deaa88;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+
+/* End of Navigation */
+
+/* navbar ends here */
+
+
+/* Header */
+.header {
+    margin-left: 8rem;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(../img/header-3.jpeg) center no-repeat;
+    background-size: cover;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-heading {
+    font-size: 2.4rem;
+    color: #deaa88;
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+}
+
+.banner {
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+}
+
+.banner-heading {
+    /* font-family: 'Josefin sans', sans-serif; */
+    font-size: 5rem;
+    letter-spacing: .2rem;
+    margin-bottom: 0px;
+    font-weight: 400;
+    transition: all 0.5s;
+    animation: anim 1.5s;
+}
+
+.banner-text {
+    font-size: 3.1rem;
+    font-weight: 300;
+    color: antiquewhite;
+    transition: all 0.5s;
+    animation: anim 1.5s 0.5s backwards;
+}
+
+.banner-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.7rem;
+    background: linear-gradient(to right, gold, goldenrod);
+    color: #eee;
+    border: 0px;
+    letter-spacing: .2rem;
+    border-radius: 2rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    transition: all 0.5s;
+    animation: anim 1.5s 1s backwards;
+}
+
+.banner-btn:hover {
+    background: linear-gradient(to left, gold, goldenrod);
+    transform: scale(1.2) rotate(7deg);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+
+.banner-btn:active {
+    transform: translateY(.3rem);
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* End of Header */
+
+
+/* About us section */
+
+.about-us {
+    margin-left: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    height: 100vh;
+}
+
+.about-us-content {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    box-sizing: border-box;
+    margin-top: -10rem;
+}
+
+.about-us-heading {
+    font-size: 4.2rem;
+    color: #555;
+    letter-spacing: .2rem;
+    /* margin-bottom: 0px; */
+    font-weight: 400;
+}
+
+.small-underline {
+    height: .2rem;
+    width: 15rem;
+    background-color: #deaa88;
+    margin: 0px auto .8rem auto;
+}
+
+.large-underline {
+    height: .2rem;
+    width: 25rem;
+    background-color: #deaa88;
+}
+
+.about-us-subheading {
+    font-size: 3.1rem;
+    color: #f19659;
+    letter-spacing: .2rem;
+    font-weight: 400;
+    /* margin-bottom: 0px; */
+}
+
+.about-us-paragraph {
+    font-size: 1.5rem;
+    color: #555;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.about-us-btn {
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    border: 0px;
+    outline: none;
+    border-radius: 10rem;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.about-us-btn:active {
+    transform: translateY(.3rem);
+
+}
+
+.about-us-btn:hover {
+    transform: scale(1.1) rotate(4deg);
+}
+
+.click-btn {
+    margin-left: .3rem;
+    transition: all 0.5s;
+}
+
+.about-us-btn:hover .click-btn {
+    margin-left: 1.5rem;
+}
+
+.about-us-images {
+    flex: 1 1;
+    position: relative;
+}
+
+.image {
+    width: 32rem;
+    position: absolute;
+    top: -5%;
+    left: 40%;
+    border: .2rem solid #deaa88;
+    border-radius: .4rem;
+    box-shadow: 0 6 10 rgba(0, 0, 0, .6);
+}
+
+.image-1 {
+    transform: translate(-20%, -90%);
+    transition: all 0.5s;
+}
+
+.image-1:hover {
+    z-index: 10;
+    /* transform: rotate(4deg); */
+    /* transform: scale(.8); */
+}
+
+.image-2 {
+    transform: translate(-70%, -70%);
+    transition: all 0.5s;
+}
+
+.image-2:hover {
+    z-index: 10;
+    /* transform: rotate(4deg); */
+}
+
+
+.image-3 {
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+}
+
+.image-3:hover {
+    z-index: 10;
+    /* transform: rotate(4deg); */
+    /* transform: scale(.8); */
+}
+
+
+.image-4 {
+    transform: translate(-30%, -30%);
+    transition: all 0.5s;
+}
+
+.image-4:hover {
+    z-index: 10;
+    /* transform: rotate(4deg); */
+    /* transform: scale(.8); */
+}
+
+
+/* End of about us section */
